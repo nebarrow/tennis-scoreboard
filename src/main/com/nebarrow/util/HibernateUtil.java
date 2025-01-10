@@ -1,4 +1,4 @@
-package src.main.com.nebarrow.util;
+package main.com.nebarrow.util;
 
 import lombok.Getter;
 import org.flywaydb.core.Flyway;

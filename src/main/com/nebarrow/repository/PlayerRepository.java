@@ -2,7 +2,7 @@ package main.com.nebarrow.repository;
 
 import main.com.nebarrow.entity.Player;
 import org.hibernate.SessionFactory;
-import src.main.com.nebarrow.util.HibernateUtil;
+import main.com.nebarrow.util.HibernateUtil;
 
 import java.util.List;
 import java.util.Optional;
