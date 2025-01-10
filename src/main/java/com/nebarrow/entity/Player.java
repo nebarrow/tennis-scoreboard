@@ -1,4 +1,4 @@
-package main.com.nebarrow.entity;
+package com.nebarrow.entity;
 
 import jakarta.persistence.*;
 import lombok.*;
@@ -9,9 +9,10 @@ import lombok.*;
 @NoArgsConstructor
 @AllArgsConstructor
 @Table(name = "Players")
-public class Player {
+public class Player extends BaseEntity {
 
     @Id
+    @Column(name = "ID")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     Integer id;
 
