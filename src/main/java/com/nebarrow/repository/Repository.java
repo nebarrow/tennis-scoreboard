@@ -1,4 +1,4 @@
-package main.com.nebarrow.repository;
+package com.nebarrow.repository;
 
 import java.util.List;
 import java.util.Optional;
