@@ -1,14 +1,11 @@
 package com.nebarrow.mapper;
 
 import com.nebarrow.entity.Player;
-import org.mapstruct.Mapper;
-import org.mapstruct.factory.Mappers;
 
-@Mapper
-public interface INewMatchMapper {
-    INewMatchMapper INSTANCE = Mappers.getMapper(INewMatchMapper.class);
+public class INewMatchMapper {
 
-    INewMatchMapper toDto(Player player);
 
-    Player toEntity(String playerName);
+    public Player toEntity(String name) {
+        return Player.builder().name(name).build();
+    }
 }
