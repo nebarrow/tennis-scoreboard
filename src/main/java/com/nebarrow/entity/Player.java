@@ -1,5 +1,6 @@
 package com.nebarrow.entity;
 
+
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -16,6 +17,6 @@ public class Player extends BaseEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     int id;
 
-    @Column(name = "Name")
+    @Column(name = "Name", nullable = false)
     String name;
 }
