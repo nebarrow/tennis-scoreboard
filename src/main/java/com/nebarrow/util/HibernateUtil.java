@@ -10,22 +10,20 @@ import org.hibernate.cfg.Configuration;
 public class HibernateUtil {
     @Getter
     private static final SessionFactory sessionFactory;
-    @Getter
-    private static final Configuration configuration;
 
     static {
-        configuration = new Configuration().configure();
+        Configuration configuration = new Configuration().configure();
         sessionFactory = configuration.buildSessionFactory();
-        runMigrations();
+        runMigrations(configuration);
     }
 
-    private void runMigrations() {
+    private void runMigrations(Configuration configuration) {
         var flyway = Flyway.configure()
                 .dataSource(
-                        configuration.getProperty("connection.url"),
-                        configuration.getProperty("connection.username"),
-                        configuration.getProperty("connection.password"))
-                .locations("classpath:db/migrations")
+                        configuration.getProperty("hibernate.connection.url"),
+                        configuration.getProperty("hibernate.connection.username"),
+                        configuration.getProperty("hibernate.connection.password"))
+                .locations("classpath:db/migration")
                 .load();
         flyway.migrate();
     }
