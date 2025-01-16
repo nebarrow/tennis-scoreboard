@@ -8,6 +8,7 @@
     <artifactId>tennis-scoreboard</artifactId>
     <version>1.0-SNAPSHOT</version>
     <name>tennis-scoreboard</name>
+    <packaging>war</packaging>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
