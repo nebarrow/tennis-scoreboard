@@ -14,7 +14,7 @@ public class Player extends BaseEntity {
     @Id
     @Column(name = "ID")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    Integer id;
+    int id;
 
     @Column(name = "Name")
     String name;
