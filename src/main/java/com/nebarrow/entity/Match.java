@@ -17,7 +17,7 @@ public class Match extends BaseEntity {
     @Id
     @Column(name = "ID")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    Integer id;
+    int id;
 
     @JoinColumn(name = "Player1", referencedColumnName = "ID")
     @ManyToOne
