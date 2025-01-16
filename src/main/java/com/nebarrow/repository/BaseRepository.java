@@ -71,7 +71,7 @@ public class BaseRepository<K extends Integer, E extends BaseEntity> implements 
     @Override
     public List<E> getAll() {
         try (var session = sessionFactory.openSession()) {
-            return session.createQuery("from Player", entityClass).list();
+            return session.createQuery("from " + entityClass.getName(), entityClass).list();
         } catch (Exception e) {
             throw new RuntimeException(e.getMessage());
         }
