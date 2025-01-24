@@ -4,5 +4,5 @@ import com.nebarrow.entity.Player;
 import lombok.Builder;
 
 @Builder
-public record MatchResponse(Player playerOne, Player playerTwo, Player winner) {
+public record MatchResponse(String playerOne, String playerTwo, String winner) {
 }
