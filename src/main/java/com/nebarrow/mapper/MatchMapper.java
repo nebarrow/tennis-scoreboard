@@ -3,23 +3,23 @@ package com.nebarrow.mapper;
 import com.nebarrow.dto.request.MatchRequest;
 import com.nebarrow.dto.response.MatchResponse;
 import com.nebarrow.entity.Match;
-import com.nebarrow.entity.Player;
+import org.mapstruct.Mapper;
+import org.mapstruct.Mapping;
+import org.mapstruct.factory.Mappers;
 
-public class MatchMapper {
+@Mapper
+public interface MatchMapper {
 
-    public static Match toEntity(MatchRequest request) {
-        return Match.builder()
-                .playerOne(Player.builder().id(request.playerOne()).build())
-                .playerTwo(Player.builder().id(request.playerTwo()).build())
-                .winner(Player.builder().id(request.winner()).build())
-                .build();
-    }
+    MatchMapper INSTANCE = Mappers.getMapper(MatchMapper.class);
 
-    public static MatchResponse toDto(Match match) {
-        return MatchResponse.builder()
-                .playerOne(Player.builder().name(match.getPlayerOne().getName()).build())
-                .playerTwo(Player.builder().name(match.getPlayerTwo().getName()).build())
-                .winner(Player.builder().name(match.getWinner().getName()).build())
-                .build();
-    }
+    @Mapping(target = "id", ignore = true)
+    @Mapping(target = "playerOne.id", source = "playerOne")
+    @Mapping(target = "playerTwo.id", source = "playerTwo")
+    @Mapping(target = "winner.id", source = "winner")
+    Match toEntity(MatchRequest request);
+
+    @Mapping(target = "playerOne", source = "playerOne.name")
+    @Mapping(target = "playerTwo", source = "playerTwo.name")
+    @Mapping(target = "winner", source = "winner.name")
+    MatchResponse toDto(Match match);
 }
