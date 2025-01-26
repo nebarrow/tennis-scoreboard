@@ -44,7 +44,7 @@
                     <td>${requestScope.matchScore.getPlayers().get(0).getGames()}</td>
                     <td>
                         <c:choose>
-                            <c:when test="${requestScope.matchScore.getPlayers().get(0).getGames() == 6 && requestScope.matchScore.getPlayers().get(1).getGames() == 6}">
+                            <c:when test="${requestScope.matchScore.isTieBreak()}">
                                 ${requestScope.matchScore.getPlayers().get(0).getPoints()}
                             </c:when>
                             <c:otherwise>
@@ -71,7 +71,7 @@
                     <td>${requestScope.matchScore.getPlayers().get(1).getGames()}</td>
                     <td>
                         <c:choose>
-                            <c:when test="${requestScope.matchScore.getPlayers().get(0).getGames() == 6 && requestScope.matchScore.getPlayers().get(1).getGames() == 6}">
+                            <c:when test="${requestScope.matchScore.isTieBreak()}">
                                 ${requestScope.matchScore.getPlayers().get(1).getPoints()}
                             </c:when>
                             <c:otherwise>
