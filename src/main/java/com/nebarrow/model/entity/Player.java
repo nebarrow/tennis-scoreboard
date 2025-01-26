@@ -1,5 +1,4 @@
-package com.nebarrow.entity;
-
+package com.nebarrow.model.entity;
 
 import jakarta.persistence.*;
 import lombok.*;
