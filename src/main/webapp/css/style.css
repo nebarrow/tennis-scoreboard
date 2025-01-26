@@ -1,12 +1,11 @@
 header {
-    font-family: "Roboto-Mono",  monospace;
+    font-family: "Roboto-Mono", monospace;
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
-    padding: 10px 20px; 
-    
-}
+    padding: 10px 20px;
 
+}
 
 a {
     text-decoration: none;
@@ -26,35 +25,30 @@ main {
     align-items: flex-start;
 }
 
-
 .welcome-header {
     font-family: 'Ubuntu', sans-serif;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    display: flex;
     font-size: 20px;
     text-align: center;
+    width: 100%;
     flex-direction: column;
     align-items: center;
 }
 
 .welcome-header img {
-    width: 100%; 
-    height: 100%;
-    margin-top: 10px;
+    width: 50%;
+    display: flex;
     border-radius: 30px;
 }
 
 .matches-button, .home-button {
-    font-family: "Roboto-Mono",  monospace;
+    font-family: "Roboto-Mono", monospace;
     margin-left: auto;
     color: black;
     background-color: white;
     font-size: 20px;
     border: none;
     padding: 10px;
-    border-radius: 5px;
     cursor: pointer;
     text-align: center;
     transition: all 0.3s ease;
@@ -66,69 +60,104 @@ main {
 
 .matches-button:hover, .home-button:hover {
     background-color: #f0f0f0;
-    color:chocolate;
+    color: chocolate;
     border-color: chocolate;
 }
 
 .home-button:active, .matches-button:active {
-    background-color: #ddd; 
+    background-color: #ddd;
     transform: scale(0.98);
 }
 
 .buttons-under-picture {
-    position: absolute;
-    border: none;
-    top: 91%; 
-    left: 50%;
-    transform: translate(-50%, -50%);
+    font-size: x-large;
+    position: relative;
+    max-width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 10px;
+    width: 100%;
+    justify-content: center;
+    margin-top: 7px;
 }
 
-.start-button {
+.first-start-button {
     font-family: 'Ubuntu', sans-serif;
-    font-size: large;
+    font-size: 2vw;
     font-weight: normal;
-    width: 350px;
+    width: 102%;
+    max-width: 102%;
     height: 50px;
-    background-color:#42a7f5;
+    background-color: #42a7f5;
     border: none;
     color: white;
     border-radius: 30px;
     transition: background-color 0.5s ease, color 0.5s ease, transform 0.3s ease;
+    display: flex;
+    transform: translate(-2%);
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.second-start-button {
+    font-size: xx-large;
+    font-weight: bold;
+    max-width: 100%;
+    height: 50px;
+    background-color: #42a7f5;
+    border: none;
+    color: white;
+    border-radius: 30px;
+    transition: background-color 0.5s ease, color 0.5s ease, transform 0.3s ease;
+    margin: 2px auto;
+    width: 90%;
+}
+
+
+.welcome-header h1 {
+    font-size: clamp(1.5rem, 5vw, 4rem);
+}
+
+.welcome-header p {
+    font-size: clamp(1.5rem, 2vw, 4rem);;
 }
 
 .results-button {
     font-family: 'Ubuntu', sans-serif;
-    font-size: large;
+    font-size: 2vw;
     font-weight: normal;
-    width: 350px;
+    width: 100%;
+    max-width: 100%;
     height: 50px;
-    background-color:rgb(185, 181, 181);
+    background-color: rgb(185, 181, 181);
     border: none;
     color: white;
     border-radius: 30px;
     transition: background-color 0.5s ease, color 0.5s ease, transform 0.3s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
 
-.start-button:hover {
-    background-color:#266ca2;
+.first-start-button:hover, .second-start-button:hover {
+    background-color: #266ca2;
     transition: background-color 0.5s ease, color 0.5s ease, transform 0.3s ease;
 }
 
+
 .results-button:hover {
-    background-color:rgb(118, 116, 116);
+    background-color: rgb(118, 116, 116);
     transition: background-color 0.5s ease, color 0.5s ease, transform 0.3s ease;
 }
 
 .start-match-header, .end-match-header {
     font-family: 'Ubuntu', sans-serif;
-    position: absolute;
-    top: 13%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    position: relative;
+    display: flex;
+    transform: translate(0%, 7%);
     font-size: 20px;
     text-align: center;
     flex-direction: column;
@@ -136,31 +165,25 @@ main {
 }
 
 .start-match-header img {
-    width: 400%; 
-    height: 400%;
-    position: absolute; 
-    top: 100%;     
-    left: -140%;
-    margin-top: 10px;
-    border-radius: 30px;
+    max-width: 100%;
+    width: 65%;
+    position: relative;
+    border-radius: 42px;
 }
 
 .players-form {
     font-family: 'Ubuntu', sans-serif;
-    position: absolute;
+    position: relative;
     display: block;
-    top: 85%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    transform: translate(51%, 20%);
     width: 100%;
-    max-width: 400px;
-    padding: 10px;     
+    max-width: 50%;
 }
+
 .players-form input {
     font-family: 'Ubuntu', sans-serif;
     display: block;
-    font-size: large;
-    width: 90%;           
+    width: 90%;
     padding: 15px;
     margin-bottom: 25px;
     font-size: 1em;
@@ -172,7 +195,7 @@ main {
 .players-form label {
     font-family: 'Ubuntu', sans-serif;
     font-size: large;
-    font-weight:lighter;
+    font-weight: lighter;
     margin-left: 10px;
 }
 
@@ -183,10 +206,11 @@ main {
 }
 
 .current-match-header {
-    position: absolute;
-    top: 12%;
+    position: relative;
+    width: 60%;
+    display: flex;
     left: 50%;
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, 3%);
     font-size: 20px;
     text-align: center;
     flex-direction: column;
@@ -194,11 +218,9 @@ main {
 }
 
 .current-match-header img {
-    width: 400%;
-    height: 300%;
-    position: absolute;
-    top: 100%;
-    left: -140%;
+    width: 100%;
+    height: auto;
+    position: relative;
     margin-top: 10px;
     border-radius: 30px;
 }
@@ -207,12 +229,12 @@ main {
     border: 1px solid #cac7c7;
     border-radius: 30px;
     margin: 60px auto;
-    width: 80%;
+    width: 65%;
     border-spacing: 0;
     text-align: left;
-    position: absolute;
-    top:50%;
-    left: 15%;
+    position: relative;
+    top: 50%;
+    left: 0%;
 }
 
 .score-table th, .score-table td {
@@ -221,6 +243,7 @@ main {
     border-bottom: 1px solid #dddddd;
     padding: 5px;
 }
+
 .score-table th {
     font-family: "Roboto Mono", monospace;
     border-bottom: 1px solid #cac7c7;
@@ -266,37 +289,117 @@ main {
     transition: background-color 0.5s ease, color 0.5s ease, transform 0.3s ease;
 }
 
+@media (max-width: 768px) {
+    .current-match-header {
+        top: 10%;
+        font-size: 18px;
+    }
+
+    .current-match-header img {
+        width: 80%;
+        height: auto;
+    }
+
+    .score-table {
+        width: 90%;
+        left: 5%;
+    }
+
+    .score-table th, .score-table td {
+        font-size: 16px;
+    }
+
+    .score-btn {
+        font-size: 18px;
+        height: 45px;
+    }
+
+    .score-table td:first-child {
+        width: 10%;
+        padding: 30px 5px;
+    }
+}
+
+@media (max-width: 1024px) {
+    .current-match-header {
+        top: 21%;
+        font-size: 18px;
+    }
+
+    .current-match-header img {
+        width: 89vw;
+        height: auto;
+    }
+
+    .score-table {
+        width: 85%;
+        left: 7.5%;
+    }
+
+    .score-table th, .score-table td {
+        font-size: 18px;
+    }
+
+    .score-btn {
+        font-size: 20px;
+        height: 50px;
+    }
+
+    .score-table td:first-child {
+        width: 8%;
+        padding: 50px 5px;
+    }
+}
+
+
+@media (min-width: 1025px) {
+    .score-btn {
+        font-size: 22px;
+        height: 55px;
+    }
+
+    .score-table th, .score-table td {
+        font-size: 20px;
+    }
+}
 
 
 .filter-container {
     width: 100%;
-    display: flex;
-    margin-top: 20px;
+    display: block;
+    height: 4vw;
+}
+
+.reset-button {
+    position: absolute;
+    width: 20%;
+    max-width: 50%;
+    margin-right: 17%;
+    margin-left: 63vw;
 }
 
 .filter-line {
+    font-size: 2vw;
     width: 47%;
-    border-radius: 15px;
-    margin-left: 150px;
+    height: 4vw;
+    border-radius: 5vw;
+    margin-left: 15%;
+    margin-right: auto;
     background-color: #dddddd;
     border: none;
-    padding-left: 30px;
-    padding-bottom: 12px;
-    padding-top: 12px;
+    padding-left: 12px;
     color: #000;
 }
 
 .matches-table {
-    margin-top: 10px;
-    margin-left: 150px;
     width: 70%;
-    margin-bottom: 20px;
+    margin: 10px auto 20px;
     border-collapse: collapse;
     border: 1px solid #ccc;
 }
 
 .matches-table th {
-    font-family: "Roboto-Mono",  monospace;
+    font-family: "Roboto-Mono", monospace;
     font-weight: bold;
     padding: 5px;
     background: #dddddd;
@@ -304,7 +407,7 @@ main {
 }
 
 .matches-table td {
-    font-family: "Roboto-Mono",  monospace;
+    font-family: "Roboto-Mono", monospace;
     width: 33%;
     border-bottom: 1px solid #dddddd;
     padding: 51px 0;
@@ -320,7 +423,7 @@ main {
 }
 
 .winner-name-td {
-    font-family: "Roboto-Mono",  monospace;
+    font-family: "Roboto-Mono", monospace;
     background-color: #dddddd;
     display: block;
     width: 38%;
@@ -339,7 +442,7 @@ main {
 }
 
 .pagination {
-    font-family: "Roboto-Mono",  monospace;
+    font-family: "Roboto-Mono", monospace;
     text-align: center;
     display: flex;
     justify-content: center;
@@ -347,7 +450,7 @@ main {
 }
 
 .num-page {
-    font-family: "Roboto-Mono",  monospace;
+    font-family: "Roboto-Mono", monospace;
     margin-left: 20px;
     text-decoration: none;
     color: black;
@@ -363,16 +466,17 @@ main {
 
 .filter-button {
     font-family: "Ubuntu", sans-serif;
-    font-size: large;
+    font-size: 2vw;
     transition: background-color 0.5s ease, color 0.5s ease, transform 0.3s ease;
-    width: 280px;
-    line-height: 45px;
-    margin-left: 20px;
-    border-radius: 18px;
+    width: 100%;
+    line-height: 4vw;
+    margin-left: 0px;
+    border-radius: 10vw;
     border: none;
     background-color: #42a7f5;
     color: #fff;
     cursor: pointer;
+    margin-top: 1px;
 }
 
 .filter-button:hover {
@@ -382,4 +486,18 @@ main {
 .divider {
     margin-top: -10px;
     color: #ccc;
+}
+
+.error-message {
+    font-family: "Roboto-Mono", monospace;
+    color: red;
+    font-weight: normal;
+    font-size: large;
+    position: relative;
+    display: flex;
+    transform: translate(5%, -48%);
+}
+
+.error-message.show {
+    opacity: 1;
 }
