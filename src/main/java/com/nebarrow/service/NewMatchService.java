@@ -2,7 +2,7 @@ package com.nebarrow.service;
 
 import com.nebarrow.dto.request.NewMatchRequest;
 import com.nebarrow.dto.response.NewMatchResponse;
-import com.nebarrow.entity.Player;
+import com.nebarrow.model.entity.Player;
 import com.nebarrow.mapper.NewMatchMapper;
 import com.nebarrow.repository.PlayerRepository;
 
