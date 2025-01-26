@@ -1,9 +1,9 @@
 package com.nebarrow.service.match;
 
-import com.nebarrow.dto.response.MatchScore;
-import com.nebarrow.entity.PlayerStats;
+import com.nebarrow.model.common.MatchScore;
+import com.nebarrow.model.common.PlayerStats;
 
-public class SimpleRule implements IScoringRule {
+public class SimpleRuleImpl implements ScoringRule {
 
     @Override
     public boolean isApplicable(MatchScore match, PlayerStats player) {
