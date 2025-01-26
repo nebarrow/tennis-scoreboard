@@ -30,12 +30,12 @@
     </div>
     <form method="get" action="${pageContext.request.contextPath}/matches">
         <div class="filter-container">
-            <input class="filter-line" name="filter" placeholder="Filter by name" type="text"/>
-            <div>
+            <div class="reset-button">
                 <a href="${pageContext.request.contextPath}/matches">
                     <button type="button" class="filter-button">Reset Filter</button>
                 </a>
             </div>
+            <input class="filter-line" name="filter" placeholder="Filter by name" type="text"/>
         </div>
     </form>
     <table class="matches-table">
