@@ -3,7 +3,7 @@ package com.nebarrow.service;
 import com.nebarrow.dto.request.MatchRequest;
 import com.nebarrow.dto.request.MatchWinnerRequest;
 import com.nebarrow.dto.response.MatchResponse;
-import com.nebarrow.entity.Match;
+import com.nebarrow.model.entity.Match;
 import com.nebarrow.mapper.MatchMapper;
 import com.nebarrow.repository.MatchRepository;
 
