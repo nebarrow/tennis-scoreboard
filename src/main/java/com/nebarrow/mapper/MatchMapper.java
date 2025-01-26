@@ -2,7 +2,7 @@ package com.nebarrow.mapper;
 
 import com.nebarrow.dto.request.MatchRequest;
 import com.nebarrow.dto.response.MatchResponse;
-import com.nebarrow.entity.Match;
+import com.nebarrow.model.entity.Match;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 import org.mapstruct.factory.Mappers;
