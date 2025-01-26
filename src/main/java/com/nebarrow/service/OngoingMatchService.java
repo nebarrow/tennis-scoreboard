@@ -1,23 +1,17 @@
 package com.nebarrow.service;
 
-import com.nebarrow.dto.response.MatchScore;
-import com.nebarrow.entity.PlayerStats;
-import lombok.Getter;
+import com.nebarrow.model.common.MatchScore;
+import com.nebarrow.model.common.PlayerStats;
 import lombok.Setter;
 
+import java.util.Map;
 import java.util.UUID;
 import java.util.concurrent.ConcurrentHashMap;
-import java.util.Map;
 
 @Setter
 public class OngoingMatchService {
 
-    private OngoingMatchService() {}
-
     private static final Map<UUID, MatchScore> matches = new ConcurrentHashMap<>();
-
-    @Getter
-    public static OngoingMatchService INSTANCE = new OngoingMatchService();
 
     public UUID addMatch(MatchScore matchScore) {
         var matchId = UUID.randomUUID();
@@ -38,5 +32,9 @@ public class OngoingMatchService {
 
     public void removeMatch(UUID matchId) {
         matches.remove(matchId);
+    }
+
+    public boolean isMatchOver(UUID matchId) {
+        return matches.get(matchId).getWinner() != null;
     }
 }
