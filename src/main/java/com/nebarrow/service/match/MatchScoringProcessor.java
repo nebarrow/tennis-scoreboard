@@ -1,14 +1,14 @@
 package com.nebarrow.service.match;
 
-import com.nebarrow.dto.response.MatchScore;
-import com.nebarrow.entity.PlayerStats;
+import com.nebarrow.model.common.MatchScore;
+import com.nebarrow.model.common.PlayerStats;
 
 import java.util.Arrays;
 import java.util.List;
 
 public class MatchScoringProcessor {
 
-    private final List<IScoringRule> rules = Arrays.asList(new SimpleRule(), new DeuceRule(), new TieBreakRule());
+    private final List<ScoringRule> rules = Arrays.asList(new SimpleRuleImpl(), new DeuceRuleImpl(), new TieBreakRuleImpl());
 
     public void process(MatchScore match, PlayerStats player) {
         for (var rule : rules) {
