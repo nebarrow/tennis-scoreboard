@@ -1,11 +1,12 @@
 package com.nebarrow.servlet;
 
 import com.nebarrow.dto.request.NewMatchRequest;
-import com.nebarrow.dto.response.MatchScore;
+import com.nebarrow.model.common.MatchScore;
 import com.nebarrow.dto.response.NewMatchResponse;
-import com.nebarrow.entity.PlayerStats;
+import com.nebarrow.model.common.PlayerStats;
 import com.nebarrow.service.NewMatchService;
 import com.nebarrow.service.OngoingMatchService;
+import com.nebarrow.util.ServiceLocator;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
@@ -19,8 +20,14 @@ import java.util.List;
 
 @WebServlet("/new-match")
 public class NewMatchServlet extends HttpServlet {
-    private final NewMatchService service = new NewMatchService();
-    private final OngoingMatchService matchService = OngoingMatchService.getINSTANCE();
+    private NewMatchService newMatchService;
+    private OngoingMatchService matchService;
+
+    @Override
+    public void init() {
+        newMatchService = ServiceLocator.getService(NewMatchService.class);
+        matchService = ServiceLocator.getService(OngoingMatchService.class);
+    }
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -30,7 +37,7 @@ public class NewMatchServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws IOException {
         var players = (NewMatchRequest) req.getAttribute("Players");
-        var playersDto = (NewMatchResponse) service.save(players);
+        var playersDto = (NewMatchResponse) newMatchService.save(players);
         var playerOneStats = PlayerStats.builder()
                 .id(playersDto.playerOneId())
                 .name(players.firstPlayerName())
@@ -46,6 +53,6 @@ public class NewMatchServlet extends HttpServlet {
 
 
         var uuid = matchService.addMatch(matchScore);
-        resp.sendRedirect("/match-score?uuid=" + uuid);
+        resp.sendRedirect(req.getContextPath() + "/match-score?uuid=" + uuid);
     }
 }
