@@ -1,4 +1,4 @@
-package com.nebarrow.entity;
+package com.nebarrow.model.common;
 
 import lombok.Builder;
 import lombok.Data;
