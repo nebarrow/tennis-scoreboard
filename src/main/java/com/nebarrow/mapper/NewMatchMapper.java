@@ -1,6 +1,6 @@
 package com.nebarrow.mapper;
 
-import com.nebarrow.entity.Player;
+import com.nebarrow.model.entity.Player;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 import org.mapstruct.factory.Mappers;
