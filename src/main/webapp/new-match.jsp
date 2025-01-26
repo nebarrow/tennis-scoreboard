@@ -28,14 +28,18 @@
             <img src="images/racket.png" alt="Guy with racket" class="racket-picture">
         </div>
         <div class="players-form">
-            <form action="new-match" method="POST">
-                <label for="playerOne">Player one</label>
-                <input type="text" id="playerOne" name="playerOne" placeholder="Name" required>
-                <label for="playerTwo">Player two</label>
-                <input type="text" id="playerTwo" name="playerTwo" placeholder="Name" required>
-                <button type="submit" class="start-button">Start</button>
+            <form id="matchForm" action="new-match" method="POST">
+                <div class="input-group">
+                    <span class="error-message" id="error-player"></span>
+                    <label for="playerOne">Player one</label>
+                    <input type="text" id="playerOne" name="playerOne" placeholder="Name" required>
+                    <label for="playerTwo">Player two</label>
+                    <input type="text" id="playerTwo" name="playerTwo" placeholder="Name" required>
+                </div>
+                <button type="submit" class="second-start-button">Start</button>
             </form>
         </div>
     </main>
+    <script src="validation.js"></script>
 </body>
 </html>
