@@ -8,7 +8,7 @@ import java.util.List;
 
 public class MatchScoringProcessor {
 
-    private final List<ScoringRule> rules = Arrays.asList(new SimpleRuleImpl(), new DeuceRuleImpl(), new TieBreakRuleImpl());
+    private final List<ScoringRule> rules = Arrays.asList(new SimpleRuleImpl(), new TieBreakRuleImpl(), new DeuceRuleImpl());
 
     public void process(MatchScore match, PlayerStats player) {
         for (var rule : rules) {
