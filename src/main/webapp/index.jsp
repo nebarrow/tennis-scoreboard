@@ -30,7 +30,7 @@
         </div>
         <div class="buttons-under-picture">
             <a href="${pageContext.request.contextPath}/new-match">
-                <button id="start-button" class="start-button">Start a new match</button>
+                <button id="start-button" class="first-start-button">Start a new match</button>
             </a>
             <a href="${pageContext.request.contextPath}/matches">
                 <button id="results-button" class="results-button">View match results</button>
