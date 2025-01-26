@@ -1,6 +1,5 @@
-package com.nebarrow.dto.response;
+package com.nebarrow.model.common;
 
-import com.nebarrow.entity.PlayerStats;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
@@ -20,7 +19,7 @@ public class MatchScore {
         return players.stream()
                 .filter(PlayerStats::isWinner)
                 .findFirst()
-                .orElseThrow(() -> new RuntimeException("Can't find winner"));
+                .orElse(null);
     }
 
     public boolean isTieBreak() {
