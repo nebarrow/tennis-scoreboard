@@ -14,7 +14,7 @@
 
         <property name="hibernate.show_sql">true</property>
         <property name="hibernate.format_sql">true</property>
-        <mapping class="com.nebarrow.entity.Player"/>
-        <mapping class="com.nebarrow.entity.Match"/>
+        <mapping class="com.nebarrow.model.entity.Player"/>
+        <mapping class="com.nebarrow.model.entity.Match"/>
     </session-factory>
 </hibernate-configuration>
